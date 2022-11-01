@@ -1,0 +1,15 @@
+[
+    {
+        "Client-Name": "Crayola",
+        "Product-Name": "Prduct",
+        "Direction": "Direction",
+        "Mnemonics": false,
+        "Region": "EN_US",
+        "Rating": false,
+        "Builds" : "builds-EN",
+        "Name-Postfix": "",
+        "Legalise" : "legalise",
+        "Region-Audio-Mixdown": true,
+        "Mixdown-Override" : ""
+    }
+]

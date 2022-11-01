@@ -1,0 +1,52 @@
+[    
+    {
+        "Dimensions": "1920x1080",
+        "Mnemonics": false,
+        "Duration-In-Sec": "30", 
+        "Name-Prefix" : "", 
+        "Name-Postfix": "",
+        "Title-1": "find the\nmagic",
+        "Title-1-Start-Time" : "0:00:02:05",
+        "Title-1-Font-Size": 150,
+        "Title-1-Invert-Weight" : true,           
+        "EF-Start-Time" : "0:00:13:20",
+        "EF-LargeText": "GET NOW",
+        "EF-LargeText-Font-Size": 110,
+        "EF-Portrait-LargeText-Font-Size": null,
+        "Video-Mixdown" : true
+    },    
+    {
+        "Dimensions": "1080x1080",
+        "Mnemonics": false,
+        "Duration-In-Sec": "30", 
+        "Name-Prefix" : "", 
+        "Name-Postfix": "",
+        "Title-1": "find the\nmagic",
+        "Title-1-Start-Time" : "0:00:02:05",
+        "Title-1-Font-Size": 150,
+        "Title-1-Invert-Weight" : true,             
+        "EF-Start-Time" : "0:00:13:20",
+        "EF-LargeText": "GET NOW",
+        "EF-LargeText-Font-Size": 90,
+        "EF-Portrait-LargeText-Font-Size": 140,        
+        "EF-LargeText-Invert-Weight" : false,
+        "Video-Mixdown" : true    
+    },
+    {
+        "Dimensions": "1080x1920",
+        "Mnemonics": false,
+        "Duration-In-Sec": "30", 
+        "Name-Prefix" : "", 
+        "Name-Postfix": "",
+        "Title-1": "find\nthe\nmagic",
+        "Title-1-Start-Time" : "0:00:02:05",
+        "Title-1-Font-Size": 150,
+        "Title-1-Invert-Weight" : true,             
+        "EF-Start-Time" : "0:00:13:20",
+        "EF-LargeText": "GET NOW",
+        "EF-LargeText-Font-Size": 90,
+        "EF-Portrait-LargeText-Font-Size": 140,        
+        "EF-LargeText-Invert-Weight" : false,
+        "Video-Mixdown" : true    
+    }
+]
