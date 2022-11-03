@@ -22,7 +22,7 @@ function createAd(adData, parentFolder, layersFolder) {
     return newComp;
 }
 
-function populateAd(itemByName, ad, adData, vidSrcFolder) {
+function populateAd(itemByName, ad, adData, vidSrcFolder, audiodSrcFolder) {
     var nextStart = 0;
     var mnumonicDelay = 0;
     var introMn;
@@ -52,7 +52,7 @@ function populateAd(itemByName, ad, adData, vidSrcFolder) {
         ad.duration = nextStart;
     }
 
-    ad.duration = addMixdown(ad, adData, mnumonicDelay, vidSrcFolder);
+    ad.duration = addMixdown(ad, adData, mnumonicDelay, vidSrcFolder, audiodSrcFolder);
     ef.outPoint = ad.duration;
 
     //hax ---->  
@@ -69,7 +69,9 @@ function populateAd(itemByName, ad, adData, vidSrcFolder) {
         }
 
         for (var i=1; i<=ad.layers.length; i++) {
-            ad.layer(i).property("Position").setValue([ ad.width/2, ad.height/2]);
+            if (layerType(ad.layer(i)) != "Audio") {
+                ad.layer(i).property("Position").setValue([ ad.width/2, ad.height/2]);
+            }
         }
         
         addMortis(itemByName, ad, adData, efSection, ad.subFolder);   

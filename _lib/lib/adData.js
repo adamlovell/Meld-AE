@@ -200,3 +200,68 @@ function convertTimeToFrames(timeString, framerate) {
   var secs = convertTimeCodeToSeconds(timeString, framerate);
   return secs * framerate;
 }
+
+
+function fileType(footageObject) { 
+    if (footageObject.hasVideo) {
+        var filePath = File.decode(footageObject.mainSource.file);
+        var extension = filePath.substr(filePath.lastIndexOf(".")+1,filePath.length).toLowerCase();
+        if (footageObject.mainSource.isStill) {
+            return "Image";
+        } else if (extension.match( new RegExp ("(ai|bmp|bw|cin|cr2|crw|dcr|dng|dib|dpx|eps|erf|exr|gif|hdr|icb|iff|jpe|jpeg|jpg|mos|mrw|nef|orf|pbm|pef|pct|pcx|pdf|pic|pict|png|ps|psd|pxr|raf|raw|rgb|rgbe|rla|rle|rpf|sgi|srf|tdi|tga|tif|tiff|vda|vst|x3f|xyze)", "i"))) {
+            return "Sequence";
+        } else {
+            if (footageObject.hasAudio) { 
+                return "Video w/ Audio"; 
+            } else { 
+                return "Video";      
+            }
+        }
+    } else if (footageObject.hasAudio && !footageObject.hasVideo) {
+        return "Audio";
+    }
+}
+
+function layerType(layer) {
+    switch (layer.matchName) {
+      case "ADBE Vector Layer":
+        return layer.matchName;
+      case "ADBE Text Layer":
+        return layer.matchName;
+      case "ADBE Camera Layer":
+        return layer.matchName;
+      case "ADBE Light Layer":
+        return layer.matchName;
+      case "ADBE AV Layer":
+        if (layer.nullLayer === true) {
+          return "Null";
+        } else if (layer.adjustmentLayer === true) {
+          return "Adjustment";
+        } else if (layer.guideLayer === true) {
+          return "Guide";
+        } else if (layer.source instanceof CompItem) {
+          return "Precomp";
+        } else if (layer.source.mainSource instanceof SolidSource) {
+          return "Solid";
+        } else if (layer.source.mainSource instanceof PlaceholderSource) {
+          return "Placeholder";
+        } else if (layer.source.mainSource instanceof FileSource) {
+          if (layer.source.footageMissing == true) {
+            return "Missing Footage";
+          }
+          var priorLayerState = layer.enabled;
+          layer.enabled = true;
+          var importIsData = layer.enabled == false;
+          layer.enabled = priorLayerState;
+
+          if (importIsData) {
+            return "Data";
+          }
+          if (!layer.source.hasVideo && layer.source.hasAudio) {
+            return "Audio";
+          }
+          return "Image";
+        }
+        return "Invalid";
+    }
+  }

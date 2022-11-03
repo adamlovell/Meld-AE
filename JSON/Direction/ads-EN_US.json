@@ -9,7 +9,7 @@
         "Builds" : "builds-EN",
         "Name-Postfix": "",
         "Legalise" : "legalise",
-        "Region-Audio-Mixdown": true,
+        "Region-Audio-Mixdown": false,
         "Mixdown-Override" : ""
     }
 ]

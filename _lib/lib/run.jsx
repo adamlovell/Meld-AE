@@ -95,7 +95,7 @@ function run(data, builds, legalise) {
         var lF = layersFolder(adData, pF);
         var ad = adExists(adData, itemByName) ? itemByName[adName(adData)] : createAd(adData, pF, lF);
         adData.legalise = legalise;
-        populateAd(itemByName, ad, adData, getVideoPath());
+        populateAd(itemByName, ad, adData, getVideoPath(), getAudioPath());
     }
     app.endUndoGroup();
 }

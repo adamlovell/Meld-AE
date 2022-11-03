@@ -66,6 +66,15 @@ function buildFootage(parentFolder, destFolder, name) {
     return importFootage;
 }
 
+function buildAudioFootage(parentFolder, destFolder, name) {
+    var file = destFolder + '/' + name + '.wav';
+    var importOpts = new ImportOptions(File(file));
+    var importFootage = app.project.importFile(importOpts);
+    importFootage.name = name;
+    importFootage.parentFolder = parentFolder; 
+    return importFootage;
+}
+
 function buildMOVFootage(parentFolder, destFolder, name) {
     var file = destFolder + '/' + name + '.mov';
     var importOpts = new ImportOptions(File(file));

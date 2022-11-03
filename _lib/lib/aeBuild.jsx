@@ -54,10 +54,18 @@ function addEndframe(itemByName, ad, adData, section, mnumonicDelay, nextStart) 
     return layer;
 }
 
-function addMixdown(ad, adData, mnumonicDelay, vidSrcFolder){
+function addMixdown(ad, adData, mnumonicDelay, vidSrcFolder, audiodSrcFolder){
     var footage = buildFootage(ad.subFolder, vidSrcFolder, mixdown(adData) + '-' +  width(adData.build.dimensions) + 'x' + height(adData.build.dimensions));
     var layer = buildLayer(footage, ad, 8, mnumonicDelay);
     layer.moveToEnd();
+
+    if (adData.audioMixdown) {
+        var audioFootage = buildAudioFootage(ad.subFolder, audiodSrcFolder, audioMixdown(adData));
+        var audioLayer = buildLayer(audioFootage, ad, 8, mnumonicDelay);
+        audioLayer.moveToEnd();
+        layer.property("Audio").property("Audio Levels").setValue([-999,-999]);
+    }
+
     return layer.outPoint;
 }
 

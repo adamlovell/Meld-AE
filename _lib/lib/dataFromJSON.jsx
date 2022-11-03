@@ -30,7 +30,7 @@ function getVideoPath() {
 
 function getAudioPath() {
     var projectName = app.project.file.name.replace(".aep", "");
-    var p = app.project.file.toString().replace('AE/' + projectName + '.aep', '') + "/acc";
+    var p = app.project.file.toString().replace('AE/' + projectName + '.aep', '') + "/wav";
     return p
 }
 
@@ -164,6 +164,7 @@ function transformAds(ad) {
         //mnemonics: ad["Mnemonics"],
         region: ad["Region"],
         mixdown: ad['Mixdown'],
+        audioMixdown: ad['Region-Audio-Mixdown'],
         mixdownMulti: ad['Mixdown-Multi'],
         mixdownPlaystation: ad['Mixdown-Playstation'],
         mixdownXbox: ad['Mixdown-Xbox'],
