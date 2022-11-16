@@ -165,6 +165,7 @@ function transformAds(ad) {
         region: ad["Region"],
         mixdown: ad['Mixdown'],
         audioMixdown: ad['Region-Audio-Mixdown'],
+        footages: ad['Footages'],
         mixdownMulti: ad['Mixdown-Multi'],
         mixdownPlaystation: ad['Mixdown-Playstation'],
         mixdownXbox: ad['Mixdown-Xbox'],

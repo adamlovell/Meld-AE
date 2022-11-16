@@ -29,6 +29,7 @@ function populateAd(itemByName, ad, adData, vidSrcFolder, audiodSrcFolder) {
     var sections = adData.build.sections;
     var efSection;
     var ef;
+    alert(adData.footages[0].type);
 
     for (var i in sections) {
         var section = sections[i];
