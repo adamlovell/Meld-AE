@@ -7,7 +7,7 @@ var titleRefName = 'titleRef';
 var endFrameRefName = 'efCompRef';
 var mortisRefName = 'mortisRef';
 
-// can only be run when only a REF comp exists
+// can only be run when only a REF comp existsx
 function createAd(adData, parentFolder, layersFolder) {
     var ds = adData.build.dimensions;
     var name = adName(adData);
@@ -29,7 +29,7 @@ function populateAd(itemByName, ad, adData, vidSrcFolder, audiodSrcFolder) {
     var sections = adData.build.sections;
     var efSection;
     var ef;
-    alert(adData.footages[0].type);
+
 
     for (var i in sections) {
         var section = sections[i];
@@ -52,6 +52,12 @@ function populateAd(itemByName, ad, adData, vidSrcFolder, audiodSrcFolder) {
         }
         ad.duration = nextStart;
     }
+
+    var footages = adData.footages;
+    for (var i in footages) {
+        //alert(footages[i].type);
+    }
+
 
     ad.duration = addMixdown(ad, adData, mnumonicDelay, vidSrcFolder, audiodSrcFolder);
     ef.outPoint = ad.duration;

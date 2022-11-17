@@ -6,7 +6,10 @@
         "Mnemonics": false,
         "Region": "EN_US",
         "Rating": false,
-        "Builds" : "builds-EN",
+        "Builds" : "ads-EN",
+        "Footages" : [
+            {"type": "yap"}
+        ],        
         "Name-Postfix": "",
         "Legalise" : "legalise",
         "Region-Audio-Mixdown": false,
